@@ -8,6 +8,7 @@ function Home() {
 	const [searchQuery, setSearchQuery] = useState<string>('')
 	const [disableButton, setDisableButton] = useState<boolean>(false)
 	const history = useHistory()
+
 	const searchForAnEmployeeName = () => {
 		setDisableButton(true)
 		fetch(employeesUrl)
