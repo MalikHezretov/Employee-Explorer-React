@@ -11,6 +11,7 @@ const findAllSubordinates = async (person?: string) => {
 	while (queue.length > 0) {
 		const person = queue.shift()
 		let searchedPerson: any = await fetch(`${employeesUrl}${person}`)
+		// eslint-disable-next-line
 		searchedPerson = await searchedPerson.json()
 		temp = searchedPerson[1] ? searchedPerson[1]['direct-subordinates'] : []
 		subordinates = subordinates.concat(temp)
@@ -34,6 +35,7 @@ const Overview = (): JSX.Element => {
 		return () => {
 			setListOfSubordinates(undefined)
 		}
+		// eslint-disable-next-line
 	}, [])
 
 	const subordinateEmployees = listOfSubordinates?.map(

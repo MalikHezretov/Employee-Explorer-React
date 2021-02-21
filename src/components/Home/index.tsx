@@ -41,6 +41,7 @@ function Home() {
 					data-testid='search-box'
 					placeholder='Search of an employee'
 					value={searchQuery}
+					// eslint-disable-next-line
 					onInput={(e: any) => setSearchQuery(e.target.value)}
 				/>
 				<button
