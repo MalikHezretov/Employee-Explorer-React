@@ -40,7 +40,7 @@ const Overview = (): JSX.Element => {
 		(subordinates, index) => <p key={index}>{subordinates}</p>
 	)
 	return (
-		<div className='overview-container'>
+		<div className='overview-container' data-testid='overview-container'>
 			<div className='header-title'>
 				<h3>Employee Overview</h3>
 			</div>

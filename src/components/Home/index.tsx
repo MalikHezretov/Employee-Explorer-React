@@ -37,12 +37,13 @@ function Home() {
 				<input
 					type='text'
 					className='search-box'
-					id='addInput'
+					data-testid='search-box'
 					placeholder='Search of an employee'
 					value={searchQuery}
 					onInput={(e: any) => setSearchQuery(e.target.value)}
 				/>
 				<button
+					data-testid='btn-search'
 					className='search-button'
 					onClick={(e) => {
 						e.preventDefault()
