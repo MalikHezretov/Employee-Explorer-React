@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { employeesUrl } from '../../utils'
 import './styles.css'
 
@@ -23,8 +23,8 @@ const Overview = (): JSX.Element => {
 	const [listOfSubordinates, setListOfSubordinates] = useState<
 		Array<string> | undefined
 	>(undefined)
-	const location = useLocation()
-	const employeeName = location?.state
+
+	const { employeeName }: { employeeName: string } = useParams()
 
 	useEffect(() => {
 		findAllSubordinates(employeeName as string).then((result: Array<string>) =>

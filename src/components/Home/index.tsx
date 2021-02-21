@@ -16,7 +16,7 @@ function Home() {
 			.then(
 				(result: Array<string>) => {
 					if (result?.includes(searchQuery)) {
-						history.push(`/overview/:${searchQuery}`, searchQuery)
+						history.push(`/overview/${searchQuery}`, searchQuery)
 						return
 					}
 					alert('Unable to find given employee')

@@ -8,11 +8,11 @@ export const App = (): JSX.Element => {
 	return (
 		<Router>
 			<Switch>
+				<Route exact path='/'>
+					<Home />
+				</Route>
 				<Route path='/overview/:employeeName'>
 					<Overview />
-				</Route>
-				<Route path='/'>
-					<Home />
 				</Route>
 			</Switch>
 		</Router>
