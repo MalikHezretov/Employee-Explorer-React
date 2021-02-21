@@ -1,0 +1,29 @@
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.search-box {
+    height: 40px;
+    width: 300px;
+}
+
+.search-button {
+    margin-left: 20px;
+    height: 45px;
+    width: 90px;
+    background-color: #2196F3;
+    border-color: transparent;
+    color: #ffffff;
+    border-radius: 5px;
+}
