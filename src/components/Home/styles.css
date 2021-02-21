@@ -22,8 +22,30 @@
     margin-left: 20px;
     height: 45px;
     width: 90px;
-    background-color: #2196F3;
-    border-color: transparent;
+    border: 1px transparent;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #2196F9;
+}
+
+.search-button:hover {
+    margin-left: 20px;
+    height: 45px;
+    width: 90px;
+    border: 1px solid #2196F3;
+    background-color: #00aacc;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+  
+.search-button:disabled,
+.search-button[disabled]{
+    margin-left: 20px;
+    height: 45px;
+    width: 90px;
+    border: 1px solid #999999;
+    background-color: #cccccc;
     color: #ffffff;
     border-radius: 5px;
 }

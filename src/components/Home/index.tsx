@@ -44,6 +44,7 @@ function Home() {
 						e.preventDefault()
 						searchForAnEmployeeName()
 					}}
+					disabled={!searchQuery}
 				>
 					SEARCH
 				</button>
