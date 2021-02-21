@@ -8,7 +8,7 @@ export const App = (): JSX.Element => {
 	return (
 		<Router>
 			<Switch>
-				<Route path='/overview'>
+				<Route path='/overview/:employeeName'>
 					<Overview />
 				</Route>
 				<Route path='/'>

@@ -6,19 +6,23 @@ import { employeesUrl } from '../../utils'
 
 function Home() {
 	const [searchQuery, setSearchQuery] = useState<string>('')
+	const [disableButton, setDisableButton] = useState<boolean>(false)
 	const history = useHistory()
 	const searchForAnEmployeeName = () => {
+		setDisableButton(true)
 		fetch(employeesUrl)
 			.then((res) => res.json())
 			.then(
 				(result: Array<string>) => {
 					if (result?.includes(searchQuery)) {
-						history.push('/overview', searchQuery)
+						history.push(`/overview/:${searchQuery}`, searchQuery)
 						return
 					}
-					alert('Unable to find given employee name')
+					alert('Unable to find given employee')
+					setDisableButton(false)
 				},
 				(err) => {
+					setDisableButton(false)
 					alert(err)
 				}
 			)
@@ -44,7 +48,7 @@ function Home() {
 						e.preventDefault()
 						searchForAnEmployeeName()
 					}}
-					disabled={!searchQuery}
+					disabled={!searchQuery || disableButton}
 				>
 					SEARCH
 				</button>
