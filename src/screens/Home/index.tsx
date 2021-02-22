@@ -29,7 +29,7 @@ function Home() {
 					className='search-button'
 					onClick={(e) => {
 						e.preventDefault()
-						history.push(`/overview/${searchQuery}`, searchQuery)
+						history.push(`/overview/${searchQuery}`)
 					}}
 					disabled={!searchQuery}
 				>

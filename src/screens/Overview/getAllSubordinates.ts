@@ -14,5 +14,5 @@ export const findAllSubordinates = async (person?: string) => {
 		subordinates = subordinates.concat(temp)
 		queue = queue.concat(temp)
 	}
-	return subordinates
+	return Array.from(new Set(subordinates))
 }

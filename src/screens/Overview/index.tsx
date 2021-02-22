@@ -17,9 +17,9 @@ const Overview = (): JSX.Element => {
 		// eslint-disable-next-line
 	}, [])
 
-	const subordinateEmployees = listOfSubordinates?.map(
-		(subordinates, index) => <p key={index}>{subordinates}</p>
-	)
+	const subordinateEmployees = listOfSubordinates?.map((subordinates) => (
+		<p key={subordinates}>{subordinates}</p>
+	))
 	return (
 		<div className='overview-container' data-testid='overview-container'>
 			<div className='header-title'>
