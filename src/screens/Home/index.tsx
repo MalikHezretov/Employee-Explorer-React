@@ -10,6 +10,7 @@ function Home() {
 	return (
 		<div className='container'>
 			<form className='form' id='addItemForm'>
+				<h1>Employee Overview</h1>
 				<label htmlFor='employee-explorer'>
 					<span className='visually-hidden'>Search of an employee</span>
 				</label>
@@ -19,8 +20,9 @@ function Home() {
 					data-testid='search-box'
 					placeholder='Search of an employee'
 					value={searchQuery}
-					// eslint-disable-next-line
-					onInput={(e: any) => setSearchQuery(e.target.value)}
+					onInput={(event: React.ChangeEvent<HTMLInputElement>) =>
+						setSearchQuery(event.target.value)
+					}
 				/>
 				<button
 					data-testid='btn-search'
