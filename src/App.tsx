@@ -1,8 +1,7 @@
 import React from 'react'
-import './App.css'
-import Home from '../src/components/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Overview from './components/Overview'
+import Home from './screens/Home'
+import Overview from './screens/Overview'
 
 export const App = (): JSX.Element => {
 	return (

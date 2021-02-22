@@ -1,33 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import './styles.css'
 import { useHistory } from 'react-router-dom'
-import { employeesUrl } from '../../utils'
+import './styles.css'
 
 function Home() {
 	const [searchQuery, setSearchQuery] = useState<string>('')
-	const [disableButton, setDisableButton] = useState<boolean>(false)
 	const history = useHistory()
-
-	const searchForAnEmployeeName = () => {
-		setDisableButton(true)
-		fetch(employeesUrl)
-			.then((res) => res.json())
-			.then(
-				(result: Array<string>) => {
-					if (result?.includes(searchQuery)) {
-						history.push(`/overview/${searchQuery}`, searchQuery)
-						return
-					}
-					alert('Unable to find given employee')
-					setDisableButton(false)
-				},
-				(err) => {
-					setDisableButton(false)
-					alert(err)
-				}
-			)
-	}
 
 	return (
 		<div className='container'>
@@ -49,9 +27,9 @@ function Home() {
 					className='search-button'
 					onClick={(e) => {
 						e.preventDefault()
-						searchForAnEmployeeName()
+						history.push(`/overview/${searchQuery}`, searchQuery)
 					}}
-					disabled={!searchQuery || disableButton}
+					disabled={!searchQuery}
 				>
 					SEARCH
 				</button>

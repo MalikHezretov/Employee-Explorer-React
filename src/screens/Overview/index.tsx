@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { employeesUrl } from '../../utils'
+import { employeesUrl } from '../../services/api'
 import './styles.css'
 
 const findAllSubordinates = async (person?: string) => {
@@ -10,8 +10,8 @@ const findAllSubordinates = async (person?: string) => {
 
 	while (queue.length > 0) {
 		const person = queue.shift()
-		let searchedPerson: any = await fetch(`${employeesUrl}${person}`)
 		// eslint-disable-next-line
+		let searchedPerson: any = await fetch(`${employeesUrl}${person}`)
 		searchedPerson = await searchedPerson.json()
 		temp = searchedPerson[1] ? searchedPerson[1]['direct-subordinates'] : []
 		subordinates = subordinates.concat(temp)
